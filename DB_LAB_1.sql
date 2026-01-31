@@ -1,16 +1,3 @@
-SQL*Plus: Release 21.0.0.0.0 - Production on Mon Jan 19 14:43:12 2026
-Version 21.3.0.0.0
-
-Copyright (c) 1982, 2021, Oracle.  All rights reserved.
-
-Enter user-name: system
-Enter password:
-Last Successful login time: Mon Jan 19 2026 14:42:29 +05:30
-
-Connected to:
-Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
 SQL> CREATE TABLE student (
   2  Roll No INT,
   3  Name VARCHAR(50),
@@ -341,5 +328,6 @@ SQL> DESC Student
  MOBILENO                                           VARCHAR2(15)
  CITY                                               VARCHAR2(20)
  SEMESTER                                           NUMBER(38)
+
 
 SQL>
