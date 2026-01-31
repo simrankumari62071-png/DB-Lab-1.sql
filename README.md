@@ -1,27 +1,23 @@
----
-
-## 📁 Files Included
-
-- **Lab-1-Questions.pdf**  
-  Contains all SQL questions for Lab – 1 (DDL + DML).
-
-- **Lab-1-Solution.sql**  
-  Contains complete SQL solutions written in script format.
-
-- **lab1_schema_figure.png** (if applicable)  
-  Shows the database schema and table structure.
+# DBMS Lab – 1  
+## SQL (DDL & DML Operations)
 
 ---
 
-## 🛠️ Tools & Software Used
-- DBMS: MySQL / Oracle / SQLite  
-- SQL Editor: MySQL Workbench / SQL Plus / Command Line  
+### 👩‍🎓 Student Details
+- **Name:** Simran Kumari 
+- **Roll No:** 23701 
+- **Semester:** 5th  
+- **Course:** B.Tech (CSE / AI & ML)  
+- **Subject:** Database Management Systems Laboratory  
 
 ---
 
-## ▶️ How to Execute the Solution
-1. Open your SQL editor  
-2. Create/select the database  
-3. Run the SQL file:  
-   ```sql
-   Lab-1-Solution.sql
+## 📌 About the Assignment
+This repository contains **DBMS Lab – 1 SQL assignment**.  
+The lab focuses on implementing **DDL and DML SQL commands** using properly written `.sql` scripts.
+
+Both the **question paper (PDF)** and the **solution file (`.sql`)** have been uploaded as required.
+
+---
+
+## 📂 Repository Structure
