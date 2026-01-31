@@ -1,10 +1,10 @@
 SQL> CREATE TABLE student (
-  2  Roll No INT,
-  3  Name VARCHAR(50),
-  4  Dept VARCHAR(20),
-  5  Age INT,
-  6  Phone VARCHAR(15)
-  7  );
+    Roll No INT,
+    Name VARCHAR(50),
+    Dept VARCHAR(20),
+    Age INT,
+    Phone VARCHAR(15)
+    );
 Roll No INT,
         *
 ERROR at line 2:
@@ -12,12 +12,12 @@ ORA-00907: missing right parenthesis
 
 
 SQL> CREATE TABLE student (
-  2  RollNo INT,
-  3  Name VARCHAR(50),
-  4  Dept VARCHAR(20),
-  5  Age INT,
-  6  Phone VARCHAR(15)
-  7  );
+    RollNo INT,
+    Name VARCHAR(50),
+    Dept VARCHAR(20),
+    Age INT,
+    Phone VARCHAR(15)
+    );
 
 Table created.
 
@@ -31,10 +31,10 @@ SQL> DESC student;
  PHONE                                              VARCHAR2(15)
 
 SQL> CREATE TABLE Course (
-  2  CourseID INT,
-  3  CourseName VARCHAR(50),
-  4  Credits INT
-  5  );
+    CourseID INT,
+    CourseName VARCHAR(50),
+    Credits INT
+    );
 
 Table created.
 
@@ -331,3 +331,4 @@ SQL> DESC Student
 
 
 SQL>
+
