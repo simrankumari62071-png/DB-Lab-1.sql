@@ -28,8 +28,9 @@ SQL-exercise │ ├── SQL_exercise_1 │   │ │   ├── Lab-1-Questi
 1. Open your SQL editor (MySQL Workbench / Oracle SQL Plus / SQLite)
 2. Create or select the required database
 3. Open and run the solution file:
-4. Execute the queries in sequence
-5. Verify results using `SELECT` statements
+4. https://github.com/simrankumari62071-png/DB-Lab-1.sql.git
+5. Execute the queries in sequence
+6. Verify results using `SELECT` statements
 
 ---
 
