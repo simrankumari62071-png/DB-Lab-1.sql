@@ -1,0 +1,404 @@
+SQL> SELECT S.STUDENT_ID, S.NAME, E.COURSE_ID
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID;
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+ COURSE_ID
+----------
+       410
+Sejal Kumari
+       301
+
+       411
+Raushan kumar
+       302
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+ COURSE_ID
+----------
+
+       412
+Tannu Kumari
+       303
+
+       413
+Rahul Kumar
+
+STUDENT_ID
+----------
+NAME
+--------------------------------------------------------------------------------
+ COURSE_ID
+----------
+       304
+
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT S.Name, E.Semester
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.StudentID = E.StudentID;
+ON S.StudentID = E.StudentID
+                 *
+ERROR at line 4:
+ORA-00904: "E"."STUDENTID": invalid identifier
+
+
+SQL> SELECT S.Name, E.Semester
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID;
+
+NAME
+--------------------------------------------------------------------------------
+SEMESTER
+--------------------
+Sejal Kumari
+1
+
+Raushan kumar
+1
+
+Tannu Kumari
+2
+
+
+NAME
+--------------------------------------------------------------------------------
+SEMESTER
+--------------------
+Rahul Kumar
+2
+
+
+SQL> SELECT S.NAME, E.GRADE
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID;
+
+NAME
+--------------------------------------------------------------------------------
+GRADE
+-----
+Sejal Kumari
+A
+
+Raushan kumar
+B
+
+Tannu Kumari
+A
+
+
+NAME
+--------------------------------------------------------------------------------
+GRADE
+-----
+Rahul Kumar
+B
+
+
+SQL> SET LINESIZE 200
+SQL> SET PAGESIZE 100
+SQL> SET WRAP OFF
+SQL> COLUMN department_id FORMAT A30;
+SQL> SELECT S.NAME, E.GRADE
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID;
+
+NAME                                                                                                 GRADE
+---------------------------------------------------------------------------------------------------- -----
+Sejal Kumari                                                                                         A
+Raushan kumar                                                                                        B
+Tannu Kumari                                                                                         A
+Rahul Kumar                                                                                          B
+
+SQL> SELECT C.COURSE_NAME, C.CREDITS
+  2  FROM Course C;
+
+COURSE_NAME                                                                                             CREDITS
+---------------------------------------------------------------------------------------------------- ----------
+Surveying                                                                                                     4
+Computer Design                                                                                               5
+Science                                                                                                       6
+Mathematics                                                                                                   2
+C++                                                                                                           3
+EGD                                                                                                           1
+DBMS                                                                                                          4
+ML                                                                                                            6
+AI                                                                                                            5
+Computer Network                                                                                              3
+
+10 rows selected.
+
+SQL> SELECT COURSE_NAME, FACULTY_ID
+  2  FROM Course;
+
+COURSE_NAME                                                                                          FACULTY_ID
+---------------------------------------------------------------------------------------------------- ----------
+Surveying                                                                                                   210
+Computer Design                                                                                             209
+Science                                                                                                     208
+Mathematics                                                                                                 207
+C++                                                                                                         201
+EGD                                                                                                         202
+DBMS                                                                                                        205
+ML                                                                                                          204
+AI                                                                                                          205
+Computer Network                                                                                            206
+
+10 rows selected.
+
+SQL> SELECT FACULTY_ID, COURSE_NAME
+  2  FROM Course;
+
+FACULTY_ID COURSE_NAME
+---------- ----------------------------------------------------------------------------------------------------
+       210 Surveying
+       209 Computer Design
+       208 Science
+       207 Mathematics
+       201 C++
+       202 EGD
+       205 DBMS
+       204 ML
+       205 AI
+       206 Computer Network
+
+10 rows selected.
+
+SQL> SELECT S.NAME, C.COURSE_NAME
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID
+  5  INNER JOIN Course C
+  6  ON E.COURSE_ID = C.COURSE_ID;
+
+NAME                                                                                                 COURSE_NAME
+---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------
+Sejal Kumari                                                                                         Surveying
+Raushan kumar                                                                                        Computer Design
+Tannu Kumari                                                                                         Science
+Rahul Kumar                                                                                          Mathematics
+
+SQL> SELECT S.NAME, C.COURSE_NAME, E.SEMESTER
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID
+  5  INNER JOIN Course C
+  6  ON E.COURSE_ID = C.COURSE_ID;
+rows will be truncated
+
+
+NAME                                                                                                 COURSE_NAME
+---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------
+Sejal Kumari                                                                                         Surveying
+Raushan kumar                                                                                        Computer Design
+Tannu Kumari                                                                                         Science
+Rahul Kumar                                                                                          Mathematics
+
+SQL> SELECT S.NAME, C.COURSE_NAME, E.GRADE
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID
+  5  INNER JOIN Course C
+  6  ON E.COURSE_ID = C.COURSE_ID;
+rows will be truncated
+
+
+NAME                                                                                                 COURSE_NAME
+---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------
+Sejal Kumari                                                                                         Surveying
+Raushan kumar                                                                                        Computer Design
+Tannu Kumari                                                                                         Science
+Rahul Kumar                                                                                          Mathematics
+
+SQL> SELECT S.NAME, C.COURSE_NAME
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID
+  5  INNER JOIN Course C
+  6  ON E.COURSE_ID = C.COURSE_ID
+  7  WHERE E.SEMESTER = 1;
+
+NAME                                                                                                 COURSE_NAME
+---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------
+Sejal Kumari                                                                                         Surveying
+Raushan kumar                                                                                        Computer Design
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> COLUMN DEPARTMENT_ID FORMAT9999;
+SQL> SELECT NAME, DEPARTMENT_ID
+  2  FROM Student;
+
+NAME                                                                                                 DEPARTMENT_ID
+---------------------------------------------------------------------------------------------------- -------------
+Simran Kumari                                                                                                  110
+Ankita Mishra                                                                                                  104
+Mayank Raj                                                                                                     109
+Atisha RAJ                                                                                                     105
+Suhani kumari                                                                                                  106
+Khushi kumari                                                                                                  103
+Sejal Kumari                                                                                                   108
+Raushan kumar                                                                                                  102
+Tannu Kumari                                                                                                   107
+Rahul Kumar                                                                                                    101
+
+10 rows selected.
+
+SQL> SELECT COURSE_NAME, DEPARTMENT_ID
+  2  FROM Course;
+
+COURSE_NAME                                                                                          DEPARTMENT_ID
+---------------------------------------------------------------------------------------------------- -------------
+Surveying                                                                                                      103
+Computer Design                                                                                                108
+Science                                                                                                        102
+Mathematics                                                                                                    107
+C++                                                                                                            101
+EGD                                                                                                            110
+DBMS                                                                                                           104
+ML                                                                                                             109
+AI                                                                                                             105
+Computer Network                                                                                               106
+
+10 rows selected.
+
+SQL> SELECT COURSE_NAME, DEPARTMENT_ID
+  2  FROM Course;
+
+COURSE_NAME                                                                                          DEPARTMENT_ID
+---------------------------------------------------------------------------------------------------- -------------
+Surveying                                                                                                      103
+Computer Design                                                                                                108
+Science                                                                                                        102
+Mathematics                                                                                                    107
+C++                                                                                                            101
+EGD                                                                                                            110
+DBMS                                                                                                           104
+ML                                                                                                             109
+AI                                                                                                             105
+Computer Network                                                                                               106
+
+10 rows selected.
+
+SQL> SELECT NAME
+  2  FROM Student
+  3  WHERE DEPARTMENT_ID = 101;
+
+NAME
+----------------------------------------------------------------------------------------------------
+Rahul Kumar
+
+SQL> SELECT S.NAME, C.COURSE_NAME
+  2  FROM Student S
+  3  INNER JOIN Enrollment E
+  4  ON S.STUDENT_ID = E.STUDENT_ID
+  5  INNER JOIN Course C
+  6  ON E.COURSE_ID = C.COURSE_ID
+  7  ORDER BY S.NAME;
+
+NAME                                                                                                 COURSE_NAME
+---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------
+Rahul Kumar                                                                                          Mathematics
+Raushan kumar                                                                                        Computer Design
+Sejal Kumari                                                                                         Surveying
+Tannu Kumari                                                                                         Science
+
+SQL> SELECT COURSE_NAME, CREDITS
+  2  FROM Course
+  3  ORDER BY CREDITS DESC;
+
+COURSE_NAME                                                                                             CREDITS
+---------------------------------------------------------------------------------------------------- ----------
+Science                                                                                                       6
+ML                                                                                                            6
+Computer Design                                                                                               5
+AI                                                                                                            5
+DBMS                                                                                                          4
+Surveying                                                                                                     4
+Computer Network                                                                                              3
+C++                                                                                                           3
+Mathematics                                                                                                   2
+EGD                                                                                                           1
+
+10 rows selected.
+
+SQL> SELECT COURSE_ID, COUNT(STUDENT_ID)
+  2  FROM Enrollment
+  3  GROUP BY COURSE_ID;
+
+ COURSE_ID COUNT(STUDENT_ID)
+---------- -----------------
+       301                 1
+       302                 1
+       303                 1
+       304                 1
+
+SQL> SELECT FACULTY_ID, COUNT(COURSE_ID)
+  2  FROM Course
+  3  GROUP BY FACULTY_ID;
+
+FACULTY_ID COUNT(COURSE_ID)
+---------- ----------------
+       210                1
+       209                1
+       208                1
+       207                1
+       201                1
+       202                1
+       205                2
+       204                1
+       206                1
+
+9 rows selected.
+
+SQL> SELECT DEPARTMENT_ID, COUNT(STUDENT_ID)
+  2  FROM Student
+  3  GROUP BY DEPARTMENT_ID;
+
+DEPARTMENT_ID COUNT(STUDENT_ID)
+------------- -----------------
+          110                 1
+          104                 1
+          109                 1
+          105                 1
+          106                 1
+          103                 1
+          108                 1
+          102                 1
+          107                 1
+          101                 1
+
+10 rows selected.
+
+SQL> SELECT COURSE_ID, MAX(GRADE)
+  2  FROM Enrollment
+  3  GROUP BY COURSE_ID;
+
+ COURSE_ID MAX(G
+---------- -----
+       301 A
+       302 B
+       303 A
+       304 B
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL>
